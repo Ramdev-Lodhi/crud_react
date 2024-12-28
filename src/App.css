@@ -1,0 +1,13 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.card {
+  width: 100%;
+  background-color: rgb(250, 250, 250);
+  color: black;
+  padding: 10px 15px;
+}
