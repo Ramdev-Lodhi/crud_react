@@ -6,6 +6,7 @@ import { Form } from "../components/Form";
 
 export const Post = () => {
   const [post, setPost] = useState([]);
+  const [updatePostData, setupdatePostData] = useState({});
 
   const getPostData = async () => {
     const res = await getPost();
@@ -25,6 +26,8 @@ export const Post = () => {
     }
   };
 
+  const handleUpdatePost = (curElem) => setupdatePostData(curElem);
+
   useEffect(() => {
     getPostData();
   }, []);
@@ -32,7 +35,12 @@ export const Post = () => {
   return (
     <>
       <section>
-        <Form post={post} setPost={setPost} />
+        <Form
+          post={post}
+          setPost={setPost}
+          updatePostData={updatePostData}
+          setupdatePostData={setupdatePostData}
+        />
       </section>
       <section>
         <ul className="post-section">
@@ -41,6 +49,7 @@ export const Post = () => {
               key={curElem.id}
               curElem={curElem}
               onDeletePost={handleDeletePost}
+              onUpdatePost={handleUpdatePost}
             />
           ))}
         </ul>

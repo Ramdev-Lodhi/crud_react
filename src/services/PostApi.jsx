@@ -14,8 +14,14 @@ export const deletePost = (id) => {
   return api.delete(`/posts/${id}`);
 };
 
-//Post method
+//Post Method
 
 export const postData = (post) => {
   return api.post("/posts", post);
+};
+
+//update Method
+
+export const updatePost = (id, post) => {
+  return api.put(`/posts/${id}`, post);
 };
